@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+  
+    <h1>Perfil</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let u of user">
+          <ion-card class="glass-content">   
+            <img src="http://localhost:3000/users/image/{{u.image}}" alt="{{u.image}}" height="400px">
+            <ion-card-header>
+              <ion-card-title>{{u.user_name}}</ion-card-title>
+              <p>Correo: {{u.email}}</p>
+              <p>Nombre: {{u.name}}</p>
+  
+              <ion-button (click)="navigateToEditUser(u.id)" color="secondary">
+                Editar
+              </ion-button>
+  
+              <!--<ion-button (click)="deleteUser(u.id)" color="#">Eliminar</ion-button>-->
+  
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+  
+</ion-content>

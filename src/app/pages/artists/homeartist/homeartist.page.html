@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!---
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button>
+    </ion-buttons>
+    -->
+    <ion-title>homeartist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+
+  <div *ngFor="let u of user">
+    <h1>Artistas</h1>  
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6" size-lg="4" *ngFor="let ar of artist">
+          <ion-card class="glass-content">   
+            <img src="{{url}}/artists/image/{{ar.image}}" alt="{{ar.image}}" height="200px">
+            <ion-card-header>
+              <ion-card-title>{{ar.name}}</ion-card-title>
+              {{ar.id}}
+              <p>{{ar.description}}</p>
+
+              <ion-button *ngIf="u.role !== 'user'" (click)="navigateToEditArtist(ar.id)" color="secondary">
+                Editar
+              </ion-button>  
+
+              <ion-button *ngIf="u.role !== 'user'" (click)="deleteArtist(ar.id)"color="#">Eliminar</ion-button>   
+              
+              <ion-button (click)="navigateToSeeAlbums(ar.id)" color="dark">
+                Ver
+              </ion-button>
+              
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

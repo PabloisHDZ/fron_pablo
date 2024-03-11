@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>postArtist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>
+    <label for="">Nombre </label>
+    <input type="text" name="name" [(ngModel)]="name">
+  </p>
+  <p>
+    <label for="">Descripción </label>
+    <input type="text" name="description" [(ngModel)]="description">
+  </p>
+
+  <ion-button (click)="postArtists()" shape="round">
+    Registrar
+  </ion-button>
+</ion-content>
+

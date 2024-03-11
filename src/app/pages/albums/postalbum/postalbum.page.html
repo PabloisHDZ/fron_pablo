@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>postalbum</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>
+    <label for="">Título: </label>
+    <input type="text" name="title" [(ngModel)]="title">
+  </p>
+  <p>
+    <label for="">Descripción: </label>
+    <input type="text" name="description" [(ngModel)]="description">
+  </p>
+  <p>
+    <label for="">Año: </label>
+    <input type="text" name="year" [(ngModel)]="year">
+  </p>
+  
+  <ion-item class="glass-content">
+    <ion-label>Artista: </ion-label>
+    <ion-select [(ngModel)]="artist_id" multiple="false" placeholder="Selecciona un artista">
+      <ion-select-option *ngFor="let a of artist" [value]="a.id">
+        {{a.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="postAlbum()" shape="round">
+    Registrar
+  </ion-button>
+</ion-content>

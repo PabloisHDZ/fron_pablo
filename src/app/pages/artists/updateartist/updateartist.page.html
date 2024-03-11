@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/homeartist"></ion-back-button>
+    </ion-buttons>
+  -->
+    <ion-title>updateartist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <p>
+    <label class="more-text">Edita tu imagen: </label> <br> <br>
+    <input type="file" fill="outline" (change)="setImage($event)" />
+  </p>
+  <p>
+    <label class="more-text">Nombre del artista: </label>
+    <ion-input [(ngModel)]="name" type="text" placeholder="Nombre" class="glass-content"></ion-input>
+  </p>
+  <p>
+    <label class="more-text">Descripción: </label>
+    <ion-input [(ngModel)]="description" type="text" placeholder="Descripción" class="glass-content"></ion-input>
+  </p>
+
+  <ion-button (click)="updateArtist()" shape="round">
+    Actualizar artista
+  </ion-button> <br> <br> <br>
+
+  
+  
+</ion-content>
+

@@ -24,3 +24,26 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-content{
+    --ion-background-color: url(/assets/Pikachu.gif);
+    --color: rgb(8, 8, 8);
+}
+
+.more-text {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.glass-content{
+    /* From https://css.glass */
+    background: rgba(17, 17, 17, 0.616);
+    box-shadow: 0 8px 32px 0 rgba(2, 5, 44, 0.37);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 6, 6, 0.18);
+}
+
+
+

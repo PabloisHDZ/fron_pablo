@@ -1,20 +1,55 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-text-center glass-content">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h1>Spotify</h1> 
+
+  <div *ngFor="let u of user">
+
+    
+  <ion-button (click)="navigateToProfile()" color="#">MI PERFIL</ion-button> <br>
+  <ion-button *ngIf="u.role !== 'user' && u.role !== 'creator'" (click)="navigateToProfiles()" color="#">CONSULTAR PERFILES</ion-button>
+
+
+    <ion-card class="glass-content">  
+      <img src="../../assets/catone.gif" alt="catone" height="100px">
+      <ion-card-header>
+        <ion-card-title>Artistas</ion-card-title> <br>
+        <ion-button (click)="navigateToHomeArtist()" color="#">Ver Artistas</ion-button>
+        <ion-button *ngIf="u.role !== 'user'" (click)="navigateToPostArtist()" color="#">Agregar Artista</ion-button>
+      </ion-card-header>
+    </ion-card> <br>
+    
+    <ion-card class="glass-content">  
+      <img src="../../assets/cattwo.gif" alt="cattwo" height="100px"> 
+      <ion-card-header>
+        <ion-card-title>Álbums</ion-card-title> <br>
+        <ion-button (click)="navigateToHomeAlbum()" color="#">Ver Álbums</ion-button>
+        <ion-button *ngIf="u.role !== 'user' " (click)="navigateToPostAlbum()" color="#">Agregar Álbum</ion-button>
+      </ion-card-header>
+    </ion-card> <br>
+  
+    <ion-card class="glass-content">   
+      <img src="../../assets/catfour.gif" alt="catfour" height="100px">
+      <ion-card-header>
+        <ion-card-title>Canciones</ion-card-title> <br>
+        <ion-button (click)="navigateToHomeSong()" color="#">Ver Canciones</ion-button>
+        <ion-button *ngIf="u.role !== 'user' " (click)="navigateToPostSong()" color="#">Agregar Canción</ion-button>
+      </ion-card-header>
+    </ion-card> <br>
+    <ion-button (click)="logout()" color="Tertiary">
+      Cerrar Sesion
+    </ion-button>
+  </div> 
+ 
+
+
 </ion-content>
+
+

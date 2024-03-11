@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/homesong"></ion-back-button>
+    </ion-buttons>
+  -->
+    <ion-title>updatesong</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p>
+    <label class="more-text">Editar canción: </label> <br> <br>
+    <input type="file" fill="outline" (change)="setSong($event)" />
+  </p>
+  <p>
+    <label class="more-text">Nombre:  </label>
+    <ion-input [(ngModel)]="name" type="text" placeholder="Nombre" class="glass-content"></ion-input>
+  </p>
+  <p>
+    <label class="more-text">Número:  </label>
+    <ion-input [(ngModel)]="number" type="text" placeholder="Número en el álbum" class="glass-content"></ion-input>
+  </p>
+  <p>
+    <label class="more-text">Duración:  </label>
+    <ion-input [(ngModel)]="duration" type="text" placeholder="Duración" class="glass-content"></ion-input>
+  </p>
+  
+  <ion-item class="glass-content">
+    <ion-label>Álbum: </ion-label>
+    <ion-select [(ngModel)]="album_id" multiple="false">
+      <ion-select-option *ngFor="let a of album" [value]="a.id">
+        {{a.title}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="updateSong()" shape="round">
+    Actualizar canción
+  </ion-button> <br> <br> <br>
+
+  
+</ion-content>

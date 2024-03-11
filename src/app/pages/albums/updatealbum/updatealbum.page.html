@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/homealbum"></ion-back-button>
+    </ion-buttons>
+  -->
+    <ion-title>updatealbum</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p>
+    <label class="more-text">Editar imagen: </label> <br> <br>
+    <input type="file" fill="outline" (change)="setImage($event)" />
+  </p>
+  <p>
+    <label class="more-text">Título del álbum: </label>
+    <ion-input [(ngModel)]="title" type="text" placeholder="Título" class="glass-content"></ion-input>
+  </p>
+  <p>
+    <label class="more-text">Descripción: </label>
+    <ion-input [(ngModel)]="description" type="text" placeholder="Descripción" class="glass-content"></ion-input>
+  </p>
+  <p>
+    <label class="more-text">Año: </label>
+    <ion-input [(ngModel)]="year" type="text" placeholder="Año" class="glass-content"></ion-input>
+  </p>
+  
+  <ion-item class="glass-content">
+    <ion-label>Artista: </ion-label>
+    <ion-select [(ngModel)]="artist_id" multiple="false" placeholder="Selecciona un artista">
+      <ion-select-option *ngFor="let a of artist" [value]="a.id">
+        {{a.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="updateAlbum()" shape="round">
+    Actualizar álbum
+  </ion-button> <br> <br> <br>
+  
+</ion-content>

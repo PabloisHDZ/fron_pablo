@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>postsong</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>
+    <label for="">Nombre: </label>
+    <input type="text" name="name" [(ngModel)]="name">
+  </p>
+  <p>
+    <label for="">Número: </label>
+    <input type="text" name="number" [(ngModel)]="number">
+  </p>
+  <p>
+    <label for="">Duracion: </label>
+    <input type="text" name="duration" [(ngModel)]="duration">
+  </p>
+  
+  <ion-item class="glass-content">
+    <ion-label>Álbum: </ion-label>
+    <ion-select [(ngModel)]="album_id" multiple="false">
+      <ion-select-option *ngFor="let a of album" [value]="a.id">
+        {{a.title}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="postSong()" shape="round">
+    Registrar
+  </ion-button>
+</ion-content>

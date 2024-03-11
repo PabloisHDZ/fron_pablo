@@ -1,0 +1,24 @@
+.glass-content {
+    background-color: rgba(255, 255, 255, 0.2); /* Color de fondo translúcido */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 10px; /* Espaciado interno */
+  }
+  
+  .glass-content ion-label {
+    color: #000000; /* Color del texto de la etiqueta */
+  }
+  
+  .glass-content ion-select {
+    color: #000000; /* Color del texto del elemento seleccionado */
+    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo translúcido para el desplegable */
+    border: 1px solid #fff; /* Borde blanco */
+  }
+  
+  .glass-content ion-select::placeholder {
+    color: #000000; /* Color del texto del marcador de posición */
+  }
+  
+  .glass-content ion-select-option {
+    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo translúcido para las opciones */
+    color: #000000; /* Color del texto de las opciones */
+  }
